@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>location</title>
+</head>
+<body style="background:#1E1033;">
+   <h1 style="font-size:70px; text-align: center; color: white; margin-top: 70px;">Location
+   </h1>
+
+
+
+<style >
+ 
+      /* Slideshow container */
+      .carousel-container {
+         max-width: 1000px;
+         position: relative;
+         margin: auto;
+      }
+      
+      /* Next & previous buttons */
+      .previous, .next {
+         cursor: pointer;
+         position: absolute;
+         top: 50%;
+         width: auto;
+         padding: 16px;
+         margin-top: -22px;
+         color: white;
+         font-weight: bold;
+         font-size: 18px;
+         transition: 0.6s ease;
+         border-radius: 0 3px 3px 0;
+         user-select: none;
+      }
+      
+      /* Position the "next button" to the right */
+      .next {
+         right: 0;
+         border-radius: 3px 0 0 3px;
+      }
+      
+      
+      /* On hover, add a black background color with a little bit seethrough */
+      .prev:hover, .next:hover {
+         background-color: rgba(0,0,0,0.8);
+      }
+      
+      
+      /* The dots/bullets/indicators */
+      .navigation-dot {
+         cursor: pointer;
+         height: 15px;
+         width: 15px;
+         margin: 0 2px;
+         background-color: #bbb;
+         border-radius: 50%;
+         display: inline-block;
+         transition: background-color 0.6s ease;
+      }
+      .active, .navigation-dot:hover {
+         background-color: #717171;
+      }
+   </style>
+</head>
+<body>
+   <div class="carousel-container">
+      
+      <div class="images fade">
+        <div id='loc' style="background: white; border: 2px solid darkblue;
+                padding: 70px; margin: 50px; margin-top: 50px; border-radius: 10px;">
+                <h1 style="font-size:30px; ">R.M.K Engineering College</h1>
+            <div id='add' style="font-size: 24px;">
+                 <P>RSM Nagar, Gummidipoondi, Taluk
+                   <br>
+                  Kavaraipettai, Tamil Nadu 
+                 <br>
+                 PIN:601206
+                </P>
+ 
+               <div class="map" style="float: right;margin-top: -235px; border: 2px solid grey;">
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.8974765710764!2d80.13852997414396!3d13.356650606321335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d807de229f987%3A0x11cc13e2927bfabc!2sR.M.K.%20Engineering%20College!5e0!3m2!1sen!2sin!4v1695715861209!5m2!1sen!2sin" width="390" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+         </div>
+      </div>
+      <div class="images fade">
+         <div id="bus" style="background: white; border: 2px solid darkblue;height: 270px; padding: 20px; margin: 50px;
+            border-radius: 10px;">
+            <div id='rec' style="font-size: 24px;margin-left: 50px;">
+                 <h1>Bus Route</h1>
+                   
+                 <p>Bus Route pdf
+                 <br>
+                <button>Download</button>
+                </p>  
+
+            </div>
+               
+               <div id='not' style="font-size: 24px;padding: 70px; margin: 50px; margin-top: -250px;text-align: right;">
+                 <h1>Notification </h1>
+                   
+                 <p>Rules
+                 <br>
+                <button>Download</button>
+                </p>  
+            </div>
+            
+         
+          </div>
+      </div>
+         
+         <!-- Previous and Next Buttons -->
+         <a class="previous" onclick="plusSlides(-1)">❮</a>
+         <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+   <br>
+   
+   <!-- Navigation Dots-->
+   <div style="text-align:center">
+      <span class="navigation-dot" onclick="currentSlide(1)"></span>
+      <span class="navigation-dot" onclick="currentSlide(2)"></span>
+      
+   </div>
+   <script>
+      var currentIndex = 1;
+      
+      //Show current image
+      showSlides(currentIndex);
+      
+      //Function to move Next
+      function plusSlides(n) {
+         showSlides(currentIndex += n);
+      }
+      
+      //Function to move back
+      function currentSlide(n) {
+         showSlides(currentIndex = n);
+      }
+      
+      
+      //Initiate moving of slides
+      function showSlides(n) {
+         var i;
+         var slides = document.getElementsByClassName("images");
+         var dots = document.getElementsByClassName("navigation-dot");
+         if (n > slides.length) {currentIndex = 1}
+         if (n < 1) {currentIndex = slides.length}
+         for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+         }
+         for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+         }
+         slides[currentIndex-1].style.display = "block";
+         dots[currentIndex-1].className += " active";
+      }
+   </script>
+
+
+</body>
+</html>
